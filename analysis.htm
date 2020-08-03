@@ -1,0 +1,295 @@
+
+<html>
+<head>
+<title>Program Analysis --- NJU</title>
+</head>
+<body>
+
+
+<h1>Introduction to Program Analysis</h1>
+
+<p>
+Lecturer: <a href="https://zuozhiqiang.bitbucket.io/">Zhiqiang Zuo</a><br>
+Time: Spring 2019<br>
+Location: <br>
+Office hours:
+
+
+
+     <h2><a name="description"></a>Course description</h2>
+      <p>This course focuses on both <i>static and dynamic program analysis</i>, and will introduce the program analysis concepts, techniques, scalable implementations, tools and applications. Topics covered includes the following.</p>
+      <ul>  
+	<li>Dataflow analysis</li>
+	<li>Pointer/Alias analysis</li>
+	<li>Interprocedural analysis via CFL-reachability</li>
+	<li>Symbolic execution</li>
+	<li>Fuzzing and testing</li>
+	<li>Debugging</li>
+<!--	<li>Model checking</li> -->
+      </ul>
+      
+      <p>Moreover, a few well-recognized tools and frameworks are studied and leveraged to implement various analyses. For instance: </p>
+      <ul>  
+	<li>LLVM</li>
+	<li>KLEE</li>
+	<li>AFL</li>
+      </ul>
+      
+      <h2><a name="texts"></a>Students and Prerequisites</h2>
+      <p>The course is intended for graduate students at all levels as well as advanced undergraduates. No mandatory prerequisites are required, but it will benefit to have some background on compiler design, formal methods, or software engineering.</p>
+
+ 	  <h2><a name="texts"></a>Grading</h2>
+      <p>The grades come from the following parts: </p>
+      <ul>
+      <li><b>Assignments (30%) </b> There are several short written homework assignments, and a few programming assignments.</li>
+      <li><b>Presentation (20%) </b> You are expected to attend all the discussions during the class, and present some research papers.</li>
+      <li><b>Project (50%) </b> A final project is required. You can choose one topic among the candidate list or propose your own under the approval of the lecturer. Refer to ??? for more project details.</li>
+      </ul>
+      
+      <h2><a name="schedule"></a>Schedule/Syllabus</h2>
+      <p><b>Note 1:</b>&nbsp; "*" indicates the required readings; others are optional.</p>
+
+
+    
+<table class="schedule" border="2" cellspacing="1">
+	<tr>
+	  <th>Date</th>
+	  <th>Lecture</th>
+	  <th>Content</th>
+	  <th>Readings</th>
+	  <th>Tools</th>
+	  <th>Slides</th>
+	</tr>
+ <tr>
+  <td class="date"> </td>
+  <td>1</td>
+  <td>Introduction to program analysis</td>
+  <td></td>
+  <td><a href="https://llvm.org/">LLVM</a></td>
+ <td><a href="">.pdf</a></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>2</td>
+  <td>Data flow analysis</td>
+  <td><ul>
+  <li>See <a href="http://pages.cs.wisc.edu/~horwitz/CS704-NOTES/2.DATAFLOW.html">link</a> for a lecture note from Professor Susan Horwitz.</li>
+  </ul></td>
+  <td></td>
+ <td><a href="">.pdf</a></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>4</td>
+  <td>Paper discussion</td>
+  <td><ul><li></li></ul></td>
+ <td></td>
+ <td></td>
+</tr>
+
+<tr>
+   <td class="date"></td>
+  <td>5</td>
+  <td>Pointer analysis</td>
+  <td></td>
+  <td></td>
+  <td><a href="">.pdf</a></td>
+</tr> 
+
+<tr>
+  <td class="date"></td>
+  <td>6</td>
+  <td>Paper discussion</td>
+  <td>  
+  <ul>
+  <li><a href="https://yanniss.github.io/points-to-tutorial15.pdf"><i>Pointer Analysis</i></a> (FTPL'15)</li>
+  <li><a href="https://dl.acm.org/citation.cfm?id=379665"><i>Pointer Analysis: Haven't We Solved This Problem Yet?</i></a> (PASTE'01)</li>
+  </ul>
+  </td>
+  <td></td>
+ <td></td>
+</tr>
+
+<tr>
+<td class="date"></td>
+  <td>7</td>
+  <td>Interprocedural analysis</td>
+  <td></td>
+<td></td>
+<td><a href="slides/Lec05-Interprocedural.pdf">.pdf</a></td>
+</tr> 
+ 
+ <tr>
+  <td class="date"></td>
+  <td>8</td>
+  <td>Paper discussion</td>
+  <td>
+	<ul>
+	<li><a href="https://dl.acm.org/citation.cfm?id=199462"><i>Precise Interprocedural Dataflow Analysis via Graph Reachability</i></a> (POPL'95)</li>
+    <li><a href="http://www.cs.wisc.edu/wpis/papers/tr1386.pdf"><i>Program Analysis via Graph Reachability</i></a> (IST'98)</li>
+    <li><a href="https://dl.acm.org/citation.cfm?id=3037744"><i>Graspan: A Single-machine Disk-based Graph System for Interprocedural Static Analyses of Large-scale Systems Code</i></a> (ASPLOS'17)</li>
+    </ul>
+  </td>
+  <td></td>
+ <td></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>9</td>
+  <td>Symbolic execution</td>
+  <td>
+    <ul>
+    <li>See <a href="https://github.com/saswatanand/symexbib">link</a> for a bibliography of symbolic execution related papers.</li>
+    </ul>
+  </td>
+ <td><a href="https://klee.github.io/">KLEE</a></td>
+ <td><a href="slides/Lec13-SymExec.pdf">.pdf</a></td>
+</tr>
+
+ <tr>
+  <td class="date"></td>
+  <td>10</td>
+  <td>Paper discussion</td>
+  <td>
+    <ul>
+    <li><a href="http://portal.acm.org/citation.cfm?id=360252"><i>Symbolic execution and program testing</i></a> (CACM'76)</li>
+	<li><a href="https://dl.acm.org/citation.cfm?id=1065036"><i>DART: directed automated random testing</i></a> (PLDI'05)</li>
+	<li><a href="http://llvm.org/pubs/2008-12-OSDI-KLEE.html"><i>KLEE:Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</i></a> (OSDI'08)</li>
+	</ul></td>
+	<td></td>
+ <td><a href="slides/Lec14-SymExecPapers.pdf">.pdf</a></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>11</td>
+  <td>Testing and fuzzing</td>
+  <td></td>
+  <td><a href="http://lcamtuf.coredump.cx/afl/">AFL</a></td>
+ <td></td>
+</tr>
+
+ <tr>
+  <td class="date"></td>
+  <td>12</td>
+  <td>Paper discussion</td>
+  <td>
+    <ul>
+	<li><a href="https://dl.acm.org/citation.cfm?id=1993532"><i>Finding and Understanding Bugs in C Compilers</i></a> (PLDI'11)</li>
+	<li><a href="https://dl.acm.org/citation.cfm?id=2594334"><i>Compiler Validation via Equivalence Modulo Inputs</i></a> (PLDI'14)</li>
+	<li><a href="https://dl.acm.org/citation.cfm?id=2978428"><i>Coverage-based Greybox Fuzzing as Markov Chain</i></a> (CCS'16)</li>
+	</ul>
+	</td>
+	<td></td>
+ <td></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>13</td>
+  <td>Debugging</td>
+  <td></td>
+  <td></td>
+<td></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>14</td>
+  <td>Paper discussion</td>
+  <td>
+  <ul>
+  <li><a href="https://dl.acm.org/citation.cfm?id=1101949"><i>Empirical Evaluation of the Tarantula Automatic Fault-Localization Technique</i></a> (ASE'05)</li>
+  <li><a href="https://dl.acm.org/citation.cfm?id=1065014"><i>Scalable Statistical Bug Isolation</i></a> (PLDI'05)</li>
+  <li><a href="https://dl.acm.org/citation.cfm?id=2984005"><i>Low-Overhead and Fully Automated Statistical Debugging with Abstraction Refinement</i></a> (OOPSLA'16)</li>
+  </ul>
+  </td>
+  <td></td>
+  <td></td>
+</tr> 
+
+<!--
+<tr>
+  <td class="date"></td>
+  <td>15</td>
+  <td>Model checking</td>
+<td>
+<ul>
+<li>See <a
+  href="http://www.model.in.tum.de/um/25/target.html">25 Years of
+  Model Checking Symposium</a> (2006) for some
+  interesting retrospectives.</li></ul></td>
+<td></td>
+<td><a href="slides/Lec16-ModelChecking.pdf">.pdf</a></td>
+</tr> 
+
+<tr>
+  <td class="date"></td>
+  <td>16</td>
+  <td>Paper discussion</td>
+  <td>
+    <ul>
+  <li><a href="https://link.springer.com/chapter/10.1007/10722167_15"><i>Counterexample-Guided Abstraction Refinement</i></a> (CAV'00)</li>
+  <li><a href="https://link.springer.com/chapter/10.1007/3-540-49059-0_14"><i>Symbolic Model Checking without BDDs</i></a> (TACAS'99)</li>
+  </ul>
+  </td>
+  <td></td>
+  <td></td>
+</tr> 
+
+<tr>
+  <td class="date"></td>
+  <td>13</td>
+  <td>Program synthesis</td>
+  <td></td>
+  <td><a href="https://bitbucket.org/gatoatigrado/sketch-frontend/wiki/Home">Sketch</a></td>
+<td></td>
+</tr>
+
+<tr>
+  <td class="date"></td>
+  <td>14</td>
+  <td>Paper discussion</td>
+  <td>
+  <ul>
+  <li><a href="https://ieeexplore.ieee.org/document/6679385"><i>Syntax-Guided Synthesis</i></a> (FMCAD'13)</li>
+  <li><a href="https://dl.acm.org/citation.cfm?id=1168907"><i>Combinatorial Sketching for Finite Programs</i></a> (ASPLOS'06)</li>
+  <li><a href="https://dl.acm.org/citation.cfm?id=2462174"><i>TRANSIT: Specifying Protocols with Concolic Snippets</i></a> (PLDI'13)</li>
+  </ul>
+  </td>
+  <td></td>
+  <td></td>
+</tr> 
+-->
+
+ <tr>
+  <td class="date"></td>
+  <td></td>
+  <td>Project presentations</td>
+  <td></td>
+ <td></td>
+</tr>
+ <tr>
+  <td class="date"></td>
+  <td></td>
+  <td><span class="deadline">Final project due</span></td>
+  <td></td>
+ <td></td>
+ <td></td>
+</tr> 
+
+</table>
+
+ <h2><a name="description">Reading and Writing Tips</a></h2>
+      <ul>  
+	<li><a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">How to Read a Paper</a></li>
+	<li><a href="https://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf">How to read a research paper</a></li>
+	<li><a href="https://www.duluth.umn.edu/~hrallis/guides/researching/litreview.html">Guidelines for writing a literature review</a></li>
+      </ul>
+
+
+</body>
+</html>
